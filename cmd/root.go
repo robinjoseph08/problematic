@@ -11,9 +11,6 @@ var rootCmd = &cobra.Command{
 	Use:   "problematic",
 	Short: "Problematic is a program to help create problems",
 	Long:  "This is mostly used to test that problematic programs don't negatively affect your system.",
-	Run: func(cmd *cobra.Command, args []string) {
-		// Do Stuff Here
-	},
 }
 
 func Execute() {
