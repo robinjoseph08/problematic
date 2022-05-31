@@ -62,8 +62,9 @@ func fileRun(action string, cmd *cobra.Command, args []string) {
 		err := ioutil.WriteFile(filepath, []byte("test"), 0644)
 		if err != nil {
 			fmt.Printf("Encountered an error when writing: %s\n", err.Error())
+		} else {
+			fmt.Printf("Successfully wrote 4 bytes\n")
 		}
-		fmt.Printf("Successfully wrote 4 bytes\n")
 	}
 
 	if action == "read" || action == "readwrite" {
@@ -71,7 +72,8 @@ func fileRun(action string, cmd *cobra.Command, args []string) {
 		buf, err := ioutil.ReadFile(filepath)
 		if err != nil {
 			fmt.Printf("Encountered an error when reading: %s\n", err.Error())
+		} else {
+			fmt.Printf("Successfully read %d byte(s)\n", len(buf))
 		}
-		fmt.Printf("Successfully read %d byte(s)\n", len(buf))
 	}
 }
